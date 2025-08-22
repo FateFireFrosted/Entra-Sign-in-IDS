@@ -25,10 +25,9 @@ if __name__ == '__main__':
     file_pointer = open('InteractiveSignIns_2025-08-21_2025-08-22.csv', 'r+') #download recent stuff and change this var
     filedata = file_pointer.readlines()
     for line in filedata:
-        split_values = line.split(',')
-
-        if split_values[26][1].isdigit():
-            IP_set.add(split_values[26][1:-1])
+        split_values = line.split('","')
+        if split_values[25][1].isdigit():
+            IP_set.add(split_values[25])
 
     print(IP_set)
     genIPrep(IP_set)
