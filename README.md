@@ -13,13 +13,17 @@ Download the first option as a csv
 <img width="558" height="98" alt="image" src="https://github.com/user-attachments/assets/db97de33-87f6-4cf7-873f-27c879da4cd2" />
 
 Move the csv into the same folder as Scrape.py
-Edit line 25 and input the name of the csv
 
-<img width="936" height="31" alt="image" src="https://github.com/user-attachments/assets/e4e44557-4951-4a99-92e5-b362673971a7" />
+<img width="446" height="172" alt="image" src="https://github.com/user-attachments/assets/667418f6-9a0b-44c0-bb60-78b32361c21c" />
 
 In AbuseAPI.py enter your API key on line 15
 
 <img width="322" height="105" alt="image" src="https://github.com/user-attachments/assets/8732a676-3b0a-406c-947c-45eb65be83dc" />
+
+Run the python file from the command line like 
+ python .\Scrape.py InteractiveSignIns_2025-08-21_2025-08-22.csv
+
+<img width="510" height="29" alt="image" src="https://github.com/user-attachments/assets/520241eb-dd85-49e5-8461-12bbd65ea910" />
 
 
 
