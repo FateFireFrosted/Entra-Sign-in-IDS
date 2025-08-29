@@ -19,7 +19,7 @@ def main():
                 Storage.UpdateDB(split_values[6], split_values[5], split_values[25])
 
         print(IP_set)
-        #AbuseAPI.genIPrep(IP_set)
+        AbuseAPI.genIPrep(IP_set)
     except FileNotFoundError:
         print(f"Error: The file '{sys.argv[1]}' was not found.")
     except IOError as e:
