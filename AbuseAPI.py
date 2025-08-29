@@ -12,7 +12,7 @@ def API_request(ip):
 
     headers = {
         'Accept': 'application/json',
-        'Key': 'd67725b858a777216a5680f12446b24737533f828b3212e84be09c3b4cf9d5d55160a8b4a6d7de8c' #define your own key
+        'Key': '' #define your own key
     }
 
     response = requests.request(method='GET', url=url, headers=headers, params=querystring)
