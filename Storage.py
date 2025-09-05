@@ -1,5 +1,6 @@
 import json
 import AbuseAPI
+import Whitelist
 
 #class to store user as a json value\
 class user:
@@ -37,8 +38,13 @@ def UpdateDB(login,name,ip):
     if SearchDB_NewLogin(data,login):
         WriteNewLogin(login,name,ip)
     elif SearchDB_NewIP(data,ip,login):
-        print("\n\n\nNEW IP for " + login + "\n")
-        print(AbuseAPI.API_request(ip))
+        print("\n\n\nNEW IP for " + login + " "+ ip + "\n")
+        new_IP = AbuseAPI.API_request(ip)
+        new_IP_list = new_IP.split('\n')
+        if new_IP_list[2] == '        "abuseConfidenceScore": 0,':
+            Whitelist.Whitelist(login,ip)
+        else:
+            print("Suspicious Activity Detected for " + login + " "+ ip + "\n")
         print("\n\n\n")
     file.close()
 
