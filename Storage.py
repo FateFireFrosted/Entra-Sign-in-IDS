@@ -36,6 +36,13 @@ def UpdateDB(login,name,ip):
     file = open('db.json', 'r')
     data = json.load(file)
     if SearchDB_NewLogin(data,login):
+        new_log = AbuseAPI.API_request(ip)
+        new_log_list = new_log.split('\n')
+        if new_log_list[2] == '        "abuseConfidenceScore": 0,':
+            Whitelist.Whitelist(login, ip)
+        else:
+            print("Suspicious Activity Detected for " + login + " " + ip + "\n")
+        print("\n\n\n")
         WriteNewLogin(login,name,ip)
     elif SearchDB_NewIP(data,ip,login):
         print("\n\n\nNEW IP for " + login + " "+ ip + "\n")
