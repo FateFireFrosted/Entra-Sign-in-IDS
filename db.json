@@ -1,9 +1,9 @@
 [
-{
-        "login": "Empty@Empty.com",
+    {
+        "login": "Empty@empty.com",
         "name": "Empty",
         "ip_list": [
-            "Null"
+            "0.0.0.0"
         ]
     }
 ]
