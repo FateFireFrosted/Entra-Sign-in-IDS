@@ -15,8 +15,13 @@ def main():
         for line in filedata:
             split_values = line.split('","')
             if split_values[25][1].isdigit():
-                IP_set.add(split_values[25])
-                Storage.UpdateDB(split_values[6], split_values[5], split_values[25])
+                if split_values[27] == 'Failure':
+                    print("Failed Login attempt Detected: " + split_values[6]+ " " + split_values[5] + " " + split_values[25])
+                elif split_values[27] == 'Interrupted':
+                    print("Interruption Detected: " + split_values[6]+ " " + split_values[5] + " " + split_values[25])
+                else:
+                    IP_set.add(split_values[25])
+                    Storage.UpdateDB(split_values[6], split_values[5], split_values[25])
 
         print(IP_set)
         AbuseAPI.genIPrep(IP_set)

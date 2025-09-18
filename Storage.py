@@ -39,7 +39,7 @@ def UpdateDB(login,name,ip):
         new_log = AbuseAPI.API_request(ip)
         new_log_list = new_log.split('\n')
         if new_log_list[2] == '        "abuseConfidenceScore": 0,':
-            print("New Login Found: " + login + "" + ip)
+            print("\nNew Login Found: " + login + "" + ip)
             WriteNewLogin(login,name,ip)
         else:
             print("Suspicious Activity Detected for " + login + " " + ip + "\n")
