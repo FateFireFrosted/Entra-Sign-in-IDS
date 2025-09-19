@@ -17,6 +17,14 @@ def main():
             if split_values[25][1].isdigit():
                 if split_values[27] == 'Failure':
                     print("Failed Login attempt Detected: " + split_values[6]+ " " + split_values[5] + " " + split_values[25])
+
+                    #Check the failed login
+                    response = AbuseAPI.API_request(split_values[25])
+                    response_row = response.split(',')
+
+                    #print Response
+                    print(response_row[0])
+                    print(response_row[4])
                 elif split_values[27] == 'Interrupted':
                     print("Interruption Detected: " + split_values[6]+ " " + split_values[5] + " " + split_values[25])
                 else:
