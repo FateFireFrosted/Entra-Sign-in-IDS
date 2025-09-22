@@ -25,8 +25,10 @@ def main():
                     #print Response
                     print(response_row[0])
                     print(response_row[4])
+                    IP_set.add(split_values[25])
                 elif split_values[27] == 'Interrupted':
                     print("Interruption Detected: " + split_values[6]+ " " + split_values[5] + " " + split_values[25])
+                    IP_set.add(split_values[25])
                 else:
                     IP_set.add(split_values[25])
                     Storage.UpdateDB(split_values[6], split_values[5], split_values[25])
